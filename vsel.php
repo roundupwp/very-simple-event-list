@@ -689,3 +689,23 @@ include 'vsel-feed.php';
 include 'vsel-page-shortcodes.php';
 include 'vsel-widget-shortcodes.php';
 include 'vsel-template-support.php';
+
+
+// Plugin Folder Path.
+if ( ! defined( 'VSEL_PLUGIN_DIR' ) ) {
+	define( 'VSEL_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+}
+// Plugin Folder Path.
+if ( ! defined( 'VSEL_PLUGIN_URL' ) ) {
+	define( 'VSEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+}
+
+if ( ! defined( 'VSEL_VERSION' ) ) {
+	define( 'VSEL_VERSION', '16.6' );
+}
+
+include_once trailingslashit(VSEL_PLUGIN_DIR ) . 'blocks/list-block.php';
+
+if ( vsel_list_block_allow_load() ) {
+    vsel_list_block_load();
+}
